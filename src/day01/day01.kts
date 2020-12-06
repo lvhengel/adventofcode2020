@@ -1,6 +1,6 @@
 #!/usr/bin/env kotlin
 
-@file:Include("../util/util.kts")
+//INCLUDE ../util/util.kts
 
 fun part1() {
     val input = readLines("input.txt").map(String::toInt)

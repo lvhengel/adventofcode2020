@@ -1,7 +1,6 @@
 #!/usr/bin/env kotlin
 
-@file:Include("../util/util.kts")
-
+//INCLUDE ../util/util.kts
 
 fun part1() {
     val input = readLines("input.txt")
@@ -9,23 +8,17 @@ fun part1() {
     val rows = input.size
     val cols = input[0].length
 
-    println("rows: $rows")
-    println("cols: $cols")
-
     val map = Array(rows, { CharArray(cols) })
     for ((y, line) in input.withIndex()) {
         for ((x, char) in line.withIndex()) {
             map[y][x] = char
         }
-        println(y)
     }
 
     var trees = 0
     var right = 0
     for (i in 1..rows - 1) {
         right = (right + 3) % cols
-        println("x: $i  y: $right")
-        println(map[i][right])
         if (map[i][right] == '#') {
             trees++
         }
@@ -40,8 +33,6 @@ fun part2() {
 
     val rows = input.size
     val cols = input[0].length
-
-    println(rows)
 
     val map = Array(rows, { CharArray(cols) })
     for ((y, line) in input.withIndex()) {
@@ -73,5 +64,5 @@ fun part2() {
 }
 
 
-//part1()
+part1()
 part2()
